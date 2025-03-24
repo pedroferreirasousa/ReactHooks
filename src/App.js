@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
 function App() {
 
-  const[tarefas, setTarefas] = useState([
-    'Acordar cedo',
-    'Estudar JSES6+',
-    'Lavar o carro',
-    'Estudar Hooks'
-  ]);
+  const[tarefas, setTarefas] = useState( () =>{
+    const tarefasStorage = localStorage.getItem('Array de tarefas');
+    return tarefasStorage ? JSON.parse(tarefasStorage) : [
+      'Acordar Cedo',
+      'Estudar JSE6+',
+      'Lavar o carro',
+      'Estudar Hooks'
+    ];
+  });
 
   const [campo, setCampo] = useState('');
 
@@ -29,6 +32,19 @@ function App() {
     setPlaceHolder(" ");
   }
 
+
+  // useEffect(()=>{
+  //   const tarefasStorage = localStorage.getItem('Array de tarefas');
+  //   if(tarefasStorage){
+  //     setTarefas(JSON.parse(tarefasStorage));
+  //   }
+  // }, [])
+
+
+  //funciona como um componentDidUpdate
+  useEffect(()=>{
+    localStorage.setItem('Array de tarefas', JSON.stringify(tarefas));
+  },)
 
 
 
