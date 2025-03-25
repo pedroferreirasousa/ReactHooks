@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 
 
@@ -16,21 +16,18 @@ function App() {
 
   const [campo, setCampo] = useState('');
 
-  const [placeholder, setPlaceHolder] = useState("Digite sua tarefa");
-
-  const adicionarItem = () =>{
-    setTarefas([...tarefas, campo]);	
-    setCampo("");
-
-  }
+  const adicionarItem = useCallback(()=>{
+  setTarefas([...tarefas, campo])
+  setCampo('');
+} , [tarefas, campo]);
 
   const handleCampo = (e) =>{
     setCampo(e.target.value);
   }
 
-  const limparPlaceHolder = () =>{
-    setPlaceHolder(" ");
-  }
+  // const limparPlaceHolder = () =>{
+  //   setPlaceHolder(" ");
+  // }
 
 
   // useEffect(()=>{
@@ -50,9 +47,10 @@ function App() {
 
   return (
     <div className='App'>
-    <h1>Pedro Ferreira</h1>
+    <h1>To do list</h1>
 
     <ul>
+
       {
         tarefas.map((item, index) =>{
           return(
@@ -62,7 +60,7 @@ function App() {
       }
     </ul>
 
-    <input type="text" value={campo} name="nome" placeholder={placeholder} onChange={handleCampo} />
+    <input type="text" value={campo} name="nome" placeholder="Digite sua tarefa" onChange={handleCampo} />
     <button type='button' id='add-btn' disabled={campo.length < 3 } onClick={adicionarItem}>Adicionar</button>
     </div>
   );
