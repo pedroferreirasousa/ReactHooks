@@ -121,3 +121,43 @@ input{
         color: #dedede;
     }
 }
+
+.containerApi{
+    width: 80%;
+    margin: 0 auto;
+    height: 86vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 300px;
+
+
+    .inside-containerApi{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 500px;
+    
+        h1{
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px #12e0d696;
+            color: #dedede;
+        }
+    
+        h4{
+            color: #dedede;
+            text-shadow: 2px 2px 10px #12e0d696;
+        }
+    }
+}
+
+.containerUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

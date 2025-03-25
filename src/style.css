@@ -116,4 +116,40 @@ input {
 }
 .containerApp ul li {
   color: #dedede;
+}
+
+.containerApi {
+  width: 80%;
+  margin: 0 auto;
+  height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 300px;
+}
+.containerApi .inside-containerApi {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+}
+.containerApi .inside-containerApi h1 {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(18, 224, 214, 0.5882352941);
+  color: #dedede;
+}
+.containerApi .inside-containerApi h4 {
+  color: #dedede;
+  text-shadow: 2px 2px 10px rgba(18, 224, 214, 0.5882352941);
+}
+
+.containerUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
