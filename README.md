@@ -3,7 +3,7 @@
 <p align="center">Aprendendo a utilizar react hooks com o curso FrontPush</p>
 
 ### 🌐 Deploy
-https://pedroferreirasousa.github.io/ReactHooks/
+https://react-hooks-azure-xi.vercel.app/contextapi
 
 
 
